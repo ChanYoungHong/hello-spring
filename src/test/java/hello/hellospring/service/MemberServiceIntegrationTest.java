@@ -17,10 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional // 실제 데이터를 반영시키지 않는다.
 public class MemberServiceIntegrationTest {
 
-    @Autowired
-    MemberService memberService;
-    @Autowired
-    MemberRepository memberRepository;
+    @Autowired MemberService memberService;
+    @Autowired MemberRepository memberRepository;
 
     @Test
     void 회원가입() {
