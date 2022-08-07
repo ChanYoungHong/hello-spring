@@ -1,4 +1,4 @@
-package hello.hellospring.security;
+package hello.hellospring.security.entity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

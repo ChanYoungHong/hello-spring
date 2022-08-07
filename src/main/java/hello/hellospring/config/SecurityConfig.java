@@ -1,6 +1,7 @@
-package hello.hellospring.security.config;
+package hello.hellospring.config;
 
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -10,8 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@Log4j2
 @Configuration
-@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -25,20 +26,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
             .antMatchers("/sample/all").permitAll()
             .antMatchers("/sample/member").hasRole("USER");
+
             http.formLogin(); // 인가 인증에 문제시 로그인 화면
             http.csrf().disable();
             http.logout();
 
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        // 사용자 계정은 user1
-        auth.inMemoryAuthentication().withUser("user1")
-            .password("$2a$10$8E4OmpwpWZbSTmf.2HoZK.PWN8qPBvUVGVz83bOx4v/AjQLS1cQXK")
-            .roles("USER");
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//
+//        // 사용자 계정은 user1
+//        auth.inMemoryAuthentication().withUser("user1")
+//            .password("$2a$10$8E4OmpwpWZbSTmf.2HoZK.PWN8qPBvUVGVz83bOx4v/AjQLS1cQXK")
+//            .roles("USER");
+//    }
 
 
 //    @Override
