@@ -3,6 +3,7 @@ package hello.hellospring.security.entity;
 import hello.hellospring.entity.ClubMember;
 import hello.hellospring.entity.ClubMemberRole;
 import hello.hellospring.repo.ClubMemberRepo;
+import java.util.Optional;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,13 @@ public class ClubMemberTests {
 
             clubMemberRepo.save(clubMember);
         });
+    }
+
+    @Test
+    public void testRead() {
+        Optional<ClubMember> result = clubMemberRepo.findByEmail("user95@naver.com", false);
+
+        ClubMember clubMember = result.get();
+        System.out.println(clubMember);
     }
 }

@@ -1,6 +1,5 @@
-package hello.hellospring.security.dto;
+package hello.hellospring.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import java.util.Collection;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +21,9 @@ public class ClubAuthMemberDTO extends User {
     public ClubAuthMemberDTO(
         String username,
         String password,
+        boolean fromSocial,
         Collection<? extends GrantedAuthority> authorities) {
+
         super(username, password, authorities);
         this.email = username;
         this.fromSocial = fromSocial;
