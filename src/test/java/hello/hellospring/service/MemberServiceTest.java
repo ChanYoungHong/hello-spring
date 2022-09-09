@@ -3,7 +3,8 @@ package hello.hellospring.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-import hello.hellospring.domain.Member;
+import hello.hellospring.mappertest.domain.Member;
+import hello.hellospring.mappertest.service.MemberService;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

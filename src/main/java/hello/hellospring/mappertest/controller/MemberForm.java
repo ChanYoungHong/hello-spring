@@ -1,4 +1,4 @@
-package hello.hellospring.controller;
+package hello.hellospring.mappertest.controller;
 
 public class MemberForm {
 

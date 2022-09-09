@@ -1,4 +1,4 @@
-package hello.hellospring.aop;
+package hello.hellospring.mappertest.aop;
 
 
 import org.aspectj.lang.ProceedingJoinPoint;

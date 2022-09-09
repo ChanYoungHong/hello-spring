@@ -1,4 +1,4 @@
-package hello.hellospring.controller;
+package hello.hellospring.mappertest.controller;
 
 
 import org.springframework.stereotype.Controller;

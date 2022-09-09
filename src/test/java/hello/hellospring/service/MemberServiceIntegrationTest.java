@@ -4,20 +4,21 @@ package hello.hellospring.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import hello.hellospring.domain.Member;
+import hello.hellospring.mappertest.domain.Member;
+import hello.hellospring.mappertest.service.MemberService;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
 @Transactional // 실제 데이터를 반영시키지 않는다.
 public class MemberServiceIntegrationTest {
 
-    @Autowired MemberService memberService;
+    @Autowired
+    MemberService memberService;
     @Autowired MemberRepository memberRepository;
 
     @Test

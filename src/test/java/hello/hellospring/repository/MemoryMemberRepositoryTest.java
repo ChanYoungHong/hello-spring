@@ -2,7 +2,7 @@ package hello.hellospring.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import hello.hellospring.domain.Member;
+import hello.hellospring.mappertest.domain.Member;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
