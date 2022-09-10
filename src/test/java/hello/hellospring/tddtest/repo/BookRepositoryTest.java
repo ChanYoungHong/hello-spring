@@ -1,12 +1,14 @@
 package hello.hellospring.tddtest.repo;
 
 import hello.hellospring.tddtest.domain.Book;
+import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
+import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -73,5 +75,18 @@ class BookRepositoryTest {
         assertEquals(title, book1.getTitle());
         assertEquals(author, book1.getAuthor());
 
+    }
+
+    @Sql("classpath:db/tableInit.sql")
+    @Test
+    public void 책삭제_test() {
+        // given
+        Long id = 1L;
+
+        // when
+        bookRepository.deleteById(id);
+
+        // then
+        assertFalse(bookRepository.findById(id).isPresent());
     }
 }
